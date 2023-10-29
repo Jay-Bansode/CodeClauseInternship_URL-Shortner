@@ -10,10 +10,11 @@ const Result = ({ inputValue }) => {
   const getData = async () => {
     try {
       const res = await axios.get(
-        `https://api.shrtco.de/v2/shorten?url=${inputValue}`
+        `https://is.gd/create.php?format=json&url=${inputValue}`
       );
-      setShortenLink(res.data.result.short_link);
-      //   console.log(res.data.result.short_link);
+
+      // console.log(res.data.shorturl);
+      setShortenLink(res.data.shorturl);
     } catch (error) {
       alert("Plesae enter a valid link");
       setError(error);
