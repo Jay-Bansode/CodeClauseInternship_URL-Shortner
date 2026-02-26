@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Text, HStack, Button, IconButton, Tooltip } from "@chakra-ui/react";
+import { Box, Text, HStack, Button, Tooltip } from "@chakra-ui/react";
 import axios from "axios";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { motion, AnimatePresence } from "framer-motion";

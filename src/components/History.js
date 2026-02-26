@@ -7,7 +7,6 @@ import {
     Button,
     Divider,
     Tooltip,
-    IconButton,
 } from "@chakra-ui/react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { motion, AnimatePresence } from "framer-motion";
