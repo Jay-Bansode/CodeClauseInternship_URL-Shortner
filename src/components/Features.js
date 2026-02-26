@@ -44,7 +44,6 @@ const Features = () => {
                         transform: "translateY(-4px)",
                         boxShadow: "0 8px 30px rgba(139,92,246,0.2)",
                     }}
-                    transition="all 0.25s"
                     cursor="default"
                 >
                     <VStack spacing={2}>

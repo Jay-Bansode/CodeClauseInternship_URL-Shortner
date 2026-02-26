@@ -22,11 +22,9 @@ const Result = ({ inputValue }) => {
   const [shortenLink, setShortenLink] = useState("");
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const getData = async () => {
+  const getData = React.useCallback(async () => {
     if (!inputValue) return;
-    setLoading(true);
     setError("");
     setShortenLink("");
     try {
@@ -37,16 +35,14 @@ const Result = ({ inputValue }) => {
       saveToHistory(inputValue, res.data.shorturl);
     } catch (err) {
       setError("Failed to shorten the URL. Please check the link and try again.");
-    } finally {
-      setLoading(false);
     }
-  };
+  }, [inputValue]);
 
   useEffect(() => {
     if (inputValue?.length) {
       getData();
     }
-  }, [inputValue]);
+  }, [inputValue, getData]);
 
   const handleCopy = () => {
     setCopied(true);
